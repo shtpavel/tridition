@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tridion.Console", "Tridion.Console\Tridion.Console.csproj", "{D7BD2023-F5B3-4016-993A-043AF122FE0D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tridion.Services", "Tridion.Services\Tridion.Services.csproj", "{DFCB2368-1BF0-4A82-8E25-0C4C3721ECBD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tridion.Tests", "Tridion.Tests\Tridion.Tests.csproj", "{6D731244-3A78-40CA-82D6-250BEC4A5C9B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D7BD2023-F5B3-4016-993A-043AF122FE0D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7BD2023-F5B3-4016-993A-043AF122FE0D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D7BD2023-F5B3-4016-993A-043AF122FE0D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D7BD2023-F5B3-4016-993A-043AF122FE0D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DFCB2368-1BF0-4A82-8E25-0C4C3721ECBD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DFCB2368-1BF0-4A82-8E25-0C4C3721ECBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DFCB2368-1BF0-4A82-8E25-0C4C3721ECBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DFCB2368-1BF0-4A82-8E25-0C4C3721ECBD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6D731244-3A78-40CA-82D6-250BEC4A5C9B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D731244-3A78-40CA-82D6-250BEC4A5C9B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D731244-3A78-40CA-82D6-250BEC4A5C9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D731244-3A78-40CA-82D6-250BEC4A5C9B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

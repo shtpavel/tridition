@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
+﻿using System.IO;
 using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Xml.Linq;
 using System.Xml.XPath;
 using Tridion.Services.Abstract;
@@ -13,8 +9,14 @@ namespace Tridion.Services
 {
     internal class XmlRewriter : IXmlRewriter
     {
+        #region Static fields and constants
+
         private const string Pattern = @"(?:(?<!SDL )Tridion)";
         private const string ReplaceToPattern = "SDL Tridion";
+
+        #endregion
+
+        #region Public methods
 
         public string RewriteXml(FileInfo file)
         {
@@ -26,6 +28,15 @@ namespace Tridion.Services
         public string RewriteXml(string xmlContent)
         {
             return ProcessXml(XDocument.Parse(xmlContent));
+        }
+
+        #endregion
+
+        #region Private methods
+
+        private string DoReplace(string text)
+        {
+            return Regex.Replace(text, Pattern, ReplaceToPattern, RegexOptions.IgnoreCase);
         }
 
         private string ProcessXml(XDocument doc)
@@ -48,9 +59,6 @@ namespace Tridion.Services
             return builder.ToString();
         }
 
-        private string DoReplace(string text)
-        {
-            return Regex.Replace(text, Pattern, ReplaceToPattern, RegexOptions.IgnoreCase);
-        }
+        #endregion
     }
 }

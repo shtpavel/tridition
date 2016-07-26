@@ -1,15 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using Microsoft.Practices.Unity;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Tridion.Services;
 using Tridion.Services.Abstract;
-using Microsoft.Practices.Unity;
+
 namespace Tridion.Tests
 {
     [TestClass]
     public class BackupServiceTests : TestsBase
     {
+        #region Public methods
+
         [TestMethod]
         public void Can_do_backup()
         {
@@ -36,5 +39,7 @@ namespace Tridion.Tests
 
             Assert.AreEqual(listOfFileNames.Count, bcpFiles.Length);
         }
+
+        #endregion
     }
 }

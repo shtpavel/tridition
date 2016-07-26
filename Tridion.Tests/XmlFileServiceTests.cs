@@ -1,6 +1,5 @@
 ﻿using System;
 using System.IO;
-using System.Linq;
 using Microsoft.Practices.Unity;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Tridion.Services;
@@ -11,6 +10,8 @@ namespace Tridion.Tests
     [TestClass]
     public class XmlFileServiceTests : TestsBase
     {
+        #region Public methods
+
         [TestMethod]
         public void Can_get_files_from_directory()
         {
@@ -23,7 +24,7 @@ namespace Tridion.Tests
                 {
                 }
             }
-                
+
             //A
             var files = reader.GetFiles(Folder);
 
@@ -31,6 +32,6 @@ namespace Tridion.Tests
             Assert.AreEqual(files.Length, Constants.Extensions.Length);
         }
 
-        
+        #endregion
     }
 }

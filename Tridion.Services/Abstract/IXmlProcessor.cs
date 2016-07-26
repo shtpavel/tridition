@@ -1,13 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Tridion.Services.Abstract
+﻿namespace Tridion.Services.Abstract
 {
     public interface IXmlProcessor
     {
+        #region Public methods
+
         void Process(string folder);
+
+        #endregion
     }
 }

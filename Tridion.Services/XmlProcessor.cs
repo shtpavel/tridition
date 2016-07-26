@@ -1,27 +1,37 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Tridion.Services.Abstract;
 
 namespace Tridion.Services
 {
+    /// <summary>
+    /// main xml processor app service.
+    /// Implements the strategy to rewrite required stuff.
+    /// </summary>
     public class XmlProcessor : IXmlProcessor
     {
-        private readonly IXmlRewriter _rewriter;
+        #region Fields
+
         private readonly IBackupService _backupService;
         private readonly IFileProcessor _fileProcessor;
+        private readonly IXmlRewriter _rewriter;
+
+        #endregion
+
+        #region Constructors
 
         public XmlProcessor(
-            IXmlRewriter rewriter, 
-            IBackupService backupService, 
+            IXmlRewriter rewriter,
+            IBackupService backupService,
             IFileProcessor fileProcessor)
         {
             _rewriter = rewriter;
             _backupService = backupService;
             _fileProcessor = fileProcessor;
         }
+
+        #endregion
+
+        #region Public methods
 
         public void Process(string folder)
         {
@@ -31,16 +41,17 @@ namespace Tridion.Services
             {
                 // 1 - Do backup
                 _backupService.Backup(fileInfo);
-                
+
                 // 2 - Process file
-                var rewrittenXml = String.Empty;
+                string rewrittenXml;
                 try
                 {
-                    rewrittenXml =_rewriter.RewriteXml(fileInfo);
+                    rewrittenXml = _rewriter.RewriteXml(fileInfo);
                 }
                 catch (Exception)
                 {
                     Console.WriteLine($"{fileInfo.FullName} is corrupted. Skipping it...");
+                    _backupService.RemoveBackup(fileInfo);
                     continue;
                 }
 
@@ -48,5 +59,7 @@ namespace Tridion.Services
                 _fileProcessor.Rewrite(fileInfo, rewrittenXml);
             }
         }
+
+        #endregion
     }
 }

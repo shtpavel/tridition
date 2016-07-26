@@ -1,15 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Tridion.Services.Abstract;
 
 namespace Tridion.Services
 {
     internal class FileProcessor : IFileProcessor
     {
+        #region Public methods
+
         public FileInfo[] GetFiles(string dir)
         {
             return GetFiles(new DirectoryInfo(dir));
@@ -43,5 +42,7 @@ namespace Tridion.Services
                 }
             }
         }
+
+        #endregion
     }
 }

@@ -1,11 +1,14 @@
 ﻿using System.IO;
-using System.Security.Cryptography.X509Certificates;
 
 namespace Tridion.Services.Abstract
 {
     public interface IXmlRewriter
     {
+        #region Public methods
+
         string RewriteXml(FileInfo file);
         string RewriteXml(string xmlContent);
+
+        #endregion
     }
 }

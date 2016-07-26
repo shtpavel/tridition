@@ -5,9 +5,11 @@ using Tridion.Services.Infrastructure;
 
 namespace Tridion.Console
 {
-    class Program
+    internal class Program
     {
-        static void Main(string[] args)
+        #region Private methods
+
+        private static void Main(string[] args)
         {
             var container = new ApplicationContainerBuilder().Build();
             var processor = container.Resolve<IXmlProcessor>();
@@ -24,5 +26,7 @@ namespace Tridion.Console
             else
                 System.Console.WriteLine("Path not found");
         }
+
+        #endregion
     }
 }

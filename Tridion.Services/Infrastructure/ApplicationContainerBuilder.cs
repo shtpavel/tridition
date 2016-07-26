@@ -1,15 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.Practices.Unity;
+﻿using Microsoft.Practices.Unity;
 using Tridion.Services.Abstract;
 
 namespace Tridion.Services.Infrastructure
 {
     public class ApplicationContainerBuilder
     {
+        #region Public methods
+
         public IUnityContainer Build()
         {
             var container = new UnityContainer();
@@ -21,5 +18,7 @@ namespace Tridion.Services.Infrastructure
 
             return container;
         }
+
+        #endregion
     }
 }
